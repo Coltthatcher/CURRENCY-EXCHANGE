@@ -9,11 +9,18 @@ function getSelectedClass(response, currencyIndex) {
   return new CalculateRate(response[currencyIndex].conversion_rates("#usdInputForm").val(), $('#currencies option:selected').val());
 }
 
-function  getElements(response) {
+function getElements(response) {
   if (response) {
     const currencyIndex= $('#currencies option:selected').valueOf();
     const selectedCurrency = getSelectedClass(response, currencyIndex)
-    $('.showRate').html()
+    $('.showRate').html(selectedCurrency.getInfo());
+    } else {
+    $('.showErrors').text(`There was an error: ${response}`);
   }
+}
+
+async function makeApiCall() {
+  const response = await CurrencyExchange.CalculateRate();
+  getElements(response);
 }
 
