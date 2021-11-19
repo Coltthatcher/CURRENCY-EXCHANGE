@@ -6,14 +6,14 @@ import CalculateRate from './calculaterate.js';
 import CurrencyExchange from './Currency.js';
 
 function getSelectedClass(response, currencyIndex) {
-  return new CalculateRate(response{conversion_rates}("#usdInputForm").val(),
+  return new CalculateRate(response.conversion_rates("#usdInputForm").val(),
   $('#currencies option:selected').val());
 }
 
 function getElements(response) {
   if (response) {
     const currencyIndex= $('#currencies option:selected').valueOf();
-    const selectedCurrency = getSelectedClass(response, currencyIndex);
+    const selectedCurrency = getSelectedClass(response,);
     $('.showRate').html(selectedCurrency.getInfo());
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
@@ -35,12 +35,19 @@ async function getMenu() {
 }
 
 function menuLoop(response) {
-  for (let i= 0; i < response.length; i++) {
-    let item =(response[i].conversion_rates);
-    let menuItem = `<option value="${i}">${item}</option>`;
+  const obj = response.conversion_rates
+  Object.keys(obj).forEach(key => {
+    return `<option value="${i}">${key}</option>`;
+  })
+  for (let i= 0; i < obj.length; i++) {
+    // let item =(response[i].conversion_rates);
+    let menuItem = `<option value="${i}">${key}</option>`;
     $("#currencies").append(`${menuItem}`);
   }
 }
+
+
+
 getMenu();
 
 $('#getRate').click(function() {
