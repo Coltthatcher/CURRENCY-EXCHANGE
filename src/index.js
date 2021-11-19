@@ -13,7 +13,7 @@ function getSelectedClass(response) {
 function getElements(response) {
   if (response) {
     let currencyIndex= $('#currencies option:selected').valueOf();
-    const selectedCurrency = getSelectedClass(response);
+    const selectedCurrency = CalculateRate(response);
     $('.showRate').html(selectedCurrency.getInfo());
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
