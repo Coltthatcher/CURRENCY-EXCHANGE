@@ -26,5 +26,11 @@ async function makeApiCall() {
 
 async function getMenu() {
   const response = await CurrencyExchange.getCash();
+  if (response) {
+    menuLoop(response);
+  }else{
+    $('.showErrors').text(`there was an error; ${response}`)
+  }
+  }
 }
 
