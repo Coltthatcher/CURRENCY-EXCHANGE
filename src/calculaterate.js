@@ -9,6 +9,6 @@ export default class CalculateRate {
     return(usdAmount / this.exchange.toFixed(9));
   }
   getInfo(){
-    return `The exchange for ${this.exchange} to this 1 USD`
+    return `The exchange for ${this.exchange} to this $1 USD`
   }
 }
