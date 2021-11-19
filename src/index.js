@@ -6,7 +6,7 @@ import CalculateRate from './calculaterate.js';
 import CurrencyExchange from './Currency.js';
 
 function getSelectedClass(response) {
-  return new CalculateRate(response.CalculateRate("#usdInput").val(),
+  new CalculateRate(response.CalculateRate("#usdInput").val(),
   (".showRate")('#currencies option:selected').val());
 }
 
@@ -20,12 +20,6 @@ function getElements(response) {
   }
 }
 
-function getElements(response) {
-  if (response) {
-    const
-  }
-  $('.showRate').html(response)
-}
 
 async function makeApiCall() {
   const response = await CurrencyExchange.getCash();
