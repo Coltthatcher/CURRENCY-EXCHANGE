@@ -5,12 +5,12 @@ import './css/styles.css';
 import CalculateRate from './calculaterate.js';
 import CurrencyExchange from './Currency.js';
 
-function getSelectedClass(response, /*currencyIndex)*/) {
+/*function getSelectedClass(response) {
   return new CalculateRate(response.getInfo("#usdInputForm").val(),
   $('#currencies option:selected').val());
-}
+}*/
 
-function getElements(response) {
+/*function getElements(response) {
   if (response) {
     //const currencyIndex= $('#currencies option:selected').valueOf();
     const selectedCurrency = getSelectedClass(response,);
@@ -18,6 +18,10 @@ function getElements(response) {
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
+}*/
+
+function getElements(response) {
+  $('.showRate').html(obj)
 }
 
 async function makeApiCall() {
