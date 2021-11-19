@@ -48,6 +48,7 @@ function menuLoop(response) {
   Object.keys(obj).forEach((key,i) => {
     let menuItem = `<option value="${i}">${key}</option>`;
     $("#currencies").append(`${menuItem}`);
+    console.log(menuItem)
   });
 }
 
@@ -58,4 +59,5 @@ getMenu();
 $('#getRate').click(function() {
   makeApiCall();
   getElements();
+  menuLoop();
 });
