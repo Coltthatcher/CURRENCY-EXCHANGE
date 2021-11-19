@@ -5,9 +5,15 @@ import './css/styles.css';
 import CalculateRate from './calculaterate.js';
 import CurrencyExchange from './Currency.js';
 
+function getSelectedClass(response, currencyIndex) {
+  return new CalculateRate(response[currencyIndex].conversion_rates("#usdInputForm").val(), $('#currencies option:selected').val());
+}
+
 function  getElements(response) {
   if (response) {
-    const currencyIndex
+    const currencyIndex= $('#currencies option:selected').valueOf();
+    const selectedCurrency = getSelectedClass(response, currencyIndex)
+    $('.showRate').html()
   }
 }
 
