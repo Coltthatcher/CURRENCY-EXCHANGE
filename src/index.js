@@ -7,13 +7,13 @@ import CurrencyExchange from './Currency.js';
 
 function getSelectedClass(response) {
   return new CalculateRate(response.CalculateRate("#usdInput").val(),
-  $('#currencies option:selected').val());
+  (".showRate")('#currencies option:selected').val());
 }
 
 function getElements(response) {
   if (response) {
     let currencyIndex= $('#currencies option:selected').valueOf();
-    const selectedCurrency = CalculateRate(response);
+    const selectedCurrency = getSelectedClass(response);
     $('.showRate').html(selectedCurrency.getInfo());
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
