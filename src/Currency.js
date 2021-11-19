@@ -11,3 +11,5 @@ export default class CurrencyExchange {
     }
   }
 }
+
+// console.log console.log
