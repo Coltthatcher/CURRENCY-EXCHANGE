@@ -20,7 +20,11 @@ function getElements(response) {
 }
 
 async function makeApiCall() {
-  const response = await CurrencyExchange.CalculateRate();
+  const response = await CurrencyExchange.getCash();
   getElements(response);
+}
+
+async function getMenu() {
+  const response = await CurrencyExchange.getCash();
 }
 
