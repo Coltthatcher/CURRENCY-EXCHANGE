@@ -12,10 +12,11 @@ import CurrencyExchange from './Currency.js';
 
 function getElements(response) {
   if (response) {
-    let currencyIndex= $('#currencies option:selected').valueOf();
+    let currencyIndex= $('#currencies').find(":selected").val();
+
     console.log(currencyIndex)
-    const selectedCurrency = getSelectedClass(response);
-    $('.showRate').html(selectedCurrency.getInfo());
+    // const selectedCurrency = getSelectedClass(response);
+    $('.showRate').html(/*selectedCurrency.getInfo()*/);
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
