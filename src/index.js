@@ -12,7 +12,7 @@ function getSelectedClass(response, currencyIndex) {
 function getElements(response) {
   if (response) {
     const currencyIndex= $('#currencies option:selected').valueOf();
-    const selectedCurrency = getSelectedClass(response, currencyIndex)
+    const selectedCurrency = getSelectedClass(response, currencyIndex);
     $('.showRate').html(selectedCurrency.getInfo());
     } else {
     $('.showErrors').text(`There was an error: ${response}`);
@@ -29,8 +29,19 @@ async function getMenu() {
   if (response) {
     menuLoop(response);
   }else{
-    $('.showErrors').text(`there was an error; ${response}`)
-  }
+    $('.showErrors').text(`there was an error; ${response}`);
   }
 }
 
+function menuLoop(response) {
+  for (let i= 0; i < response.length; i++) {
+    let item =(response[i].conversion_rates);
+    let menuItem = `<option value="${i}">${item}</option>`;
+    $("#currencies").append(`${menuItem}`);
+  }
+}
+getMenu();
+
+$('#getRate').click(function() {
+  makeApiCall();
+});
