@@ -6,7 +6,7 @@ import CalculateRate from './calculaterate.js';
 import CurrencyExchange from './Currency.js';
 
 function getSelectedClass(response, currencyIndex) {
-  return new CalculateRate(response[currencyIndex].conversion_rates("#usdInputForm").val(),
+  return new CalculateRate(response{conversion_rates}("#usdInputForm").val(),
   $('#currencies option:selected').val());
 }
 
@@ -30,7 +30,7 @@ async function getMenu() {
   if (response) {
     menuLoop(response);
   }else{
-    $('.showErrors').text(`there was an error; ${response}`);
+    $('.showErrors').text(`there was an error: ${response}`);
   }
 }
 
