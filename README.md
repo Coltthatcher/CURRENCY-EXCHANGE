@@ -2,7 +2,7 @@
 
 #### Created By _**Colton Thatcher**_
 
-#### _An application to_
+#### _Currency exchange rate_
 
 ## Technologies Used
 
@@ -14,10 +14,12 @@
 * _webpack_
 * _npm_
 * _Jest_
+* _API_
+
 
 ## Description
 
-_This project was created for Epicodus bootcamp to show proficiency in. The application is for . The user can ._
+_The Application is application _
 
 ## Setup/Installation Requirements
 
