@@ -33,6 +33,6 @@ $('#getRate').click(function() {
   CurrencyExchange.getCash()
   .fetch(function(response) {
     calculateExchange(response)
-    menuLoop();
+    
   });
 });
