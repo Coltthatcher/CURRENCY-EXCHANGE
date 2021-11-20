@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './Currency.js';
 
-function calculateExchange(response, USD, key) {
+function calculateExchange(response, key) {
   if (response.conversion_rates) {
     if(isNaN(response.conversion_rates[`${key}`])) {
       return $('.showErrors').text("Sorry, we couldn't convert that for you!");
     }
-    $('.showRate').html((USD*response.conversion_rates[`${key}`]));
+    $('.showRate').html((`${key}`/response.conversion_rates[`${key}`]));
     }else{
       $('.showErrors').html(`Error: ${response.message}`);
   }
@@ -32,6 +32,6 @@ getMenu();
 $('#getRate').click(function() {
   CurrencyExchange.getCash()
   .fetch(function(response) {
-    calculateExchange(response, USD, key)
+    calculateExchange(response, key)
   })
 });
