@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './Currency.js';
 
-function calculateExchange(response, key) {
+function calculateExchange(response) {
   if (response.conversion_rates) {
     if(isNaN(response.conversion_rates[`${key}`])) {
       return $('.showErrors').text("Sorry, we couldn't convert that for you!");
@@ -27,11 +27,12 @@ function menuLoop(response) {
 
 
 
-getMenu();
+
 
 $('#getRate').click(function() {
   CurrencyExchange.getCash()
   .fetch(function(response) {
     calculateExchange(response, key)
-  })
+    menuLoop();
+  });
 });
