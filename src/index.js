@@ -16,7 +16,7 @@ function calculateExchange(response, key) {
 }
 
 
-function menuLoop(response,) {
+function menuLoop(response) {
   const obj = response.conversion_rates
   Object.keys(obj).forEach((key) => {
     let menuItem = `<option value="${key}">${key}</option>`;
