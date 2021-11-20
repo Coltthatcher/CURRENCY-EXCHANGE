@@ -9,7 +9,7 @@ function calculateExchange(response, key) {
     if(isNaN(response.conversion_rates[`${key}`])) {
       return $('.showErrors').text("Sorry, we couldn't convert that for you!");
     }
-    $('.showRate').html((`${key}`/response.conversion_rates[`${key}`]));
+    $('.showRate').html(`${key}`/response.conversion_rates`${key}`);
     }else{
       $('.showErrors').html(`Error: ${response.message}`);
   }
@@ -33,6 +33,7 @@ $('#getRate').click(function() {
   CurrencyExchange.getCash()
   .fetch(function(response) {
     calculateExchange(response)
+    menuLoop();
     
   });
 });

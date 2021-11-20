@@ -23,7 +23,7 @@ _The Application is application _
 
 ## Setup/Installation Requirements
 
-* _Clone the GitHub [repository](https://github.com/christophermneal/) or download and open the Zip on your local machine.
+* _Clone the GitHub [repository]() or download and open the Zip on your local machine.
 * _From the project directory, run `npm install` in the terminal to load necessary plugins and packages._
 * _Run `npm run start` to start the application._
 * _Alternatively, you can run `npm run build` and open dist/index.html in your preferred browser._
@@ -38,7 +38,7 @@ _The Application is application _
 
 ## Known Bugs
 
-_None at this time_
+_No bugs known at this time_
 
 ## Future Updates
 
