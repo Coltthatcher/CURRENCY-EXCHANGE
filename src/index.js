@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './Currency.js';
 
-function calculateExchange(response) {
+function calculateExchange(response, key) {
   if (response.conversion_rates) {
     if(isNaN(response.conversion_rates[`${key}`])) {
       return $('.showErrors').text("Sorry, we couldn't convert that for you!");
@@ -16,7 +16,7 @@ function calculateExchange(response) {
 }
 
 
-function menuLoop(response) {
+function menuLoop(response,) {
   const obj = response.conversion_rates
   Object.keys(obj).forEach((key) => {
     let menuItem = `<option value="${key}">${key}</option>`;
@@ -32,7 +32,7 @@ function menuLoop(response) {
 $('#getRate').click(function() {
   CurrencyExchange.getCash()
   .fetch(function(response) {
-    calculateExchange(response, key)
+    calculateExchange(response)
     menuLoop();
   });
 });
