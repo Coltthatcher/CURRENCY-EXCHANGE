@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './Currency.js';
 
-function calculateExchange(response) {
+function calculateExchange(response, USD, country) {
   if (response.conversion_rates) {
-    if(!(response.conversion_rates[`${key}`])) {
+    if(isNaN(response.conversion_rates[`${country}`])) {
       return $('.showErrors').text("Sorry, we couldn't convert that for you!");
     }
-    $('.showRate').html(`${key}`/response.conversion_rates`${key}`);
+    $('.showRate').html(USD*response.conversion_rates[`${country}`]);
     }else{
       $('.showErrors').html(`Error: ${response.message}`);
   }
@@ -21,18 +21,30 @@ function menuLoop(response) {
   Object.keys(obj).forEach((key) => {
     let menuItem = `<option value="${key}">${key}</option>`;
     $("#currencies").append(`${menuItem}`);
-    console.log(menuLoop)
   });
 }
 
 
 
 
-
-$('#getRate').click(function() {
+$(document).ready(function() {
   CurrencyExchange.getCash()
-  
-    calculateExchange()
-    menuLoop();
-    
+   .then(function(response) {
+     console.log(response);
+     menuLoop(response);
+   })
+  $('#getRate').submit(function(event) {
+    event.preventDefault();
+
+    $('.showErrors').empty();
+    const country = $('.currencies').val();
+    const USD = $('#usdInput').val();
+
+    CurrencyExchange.getCash()
+    .then(function(response){
+      console.log(response)
+      calculateExchange(response, USD, country);
+    });
   });
+});
+

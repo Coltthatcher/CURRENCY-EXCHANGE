@@ -14,12 +14,12 @@
 * _webpack_
 * _npm_
 * _Jest_
-* _API_
+* _APIKEYS_
 
 
 ## Description
 
-_The Application is application _
+_This application is a currency exchange from US to any chosen currency listed from the API website. it was a show of_
 
 ## Setup/Installation Requirements
 
