@@ -19,7 +19,7 @@
 
 ## Description
 
-_This application is a currency exchange from US to any chosen currency listed from the API website. it was a show of_
+_This application is a currency exchange from US to any chosen currency listed from the API website. it was a show of my knowledge gained from API_KEYS during the weeks curriculum._
 
 ## Setup/Installation Requirements
 

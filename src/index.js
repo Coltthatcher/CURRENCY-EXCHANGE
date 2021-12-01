@@ -22,27 +22,23 @@ function menuLoop(response) {
     let menuItem = `<option value="${key}">${key}</option>`;
     $("#currencies").append(`${menuItem}`);
   });
-}
+} 
 
 
 
 
 $(document).ready(function() {
   CurrencyExchange.getCash()
-   .then(function(response) {
-     console.log(response);
-     menuLoop(response);
-   })
-  $('#getRate').submit(function(event) {
+    .then(function(response) {
+      menuLoop(response);
+    })
+  $('#getRate').click(function(event) {
     event.preventDefault();
-
     $('.showErrors').empty();
-    const country = $('.currencies').val();
+    const country = $('#currencies').val();
     const USD = $('#usdInput').val();
-
     CurrencyExchange.getCash()
     .then(function(response){
-      console.log(response)
       calculateExchange(response, USD, country);
     });
   });
