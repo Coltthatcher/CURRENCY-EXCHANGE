@@ -1,11 +1,10 @@
 export default class CurrencyExchange {
   static async getCash() {
     try {
-      const response = await fetch(`https://v6.exchangerate-api.com/v6/4dbcf6f936b0e474d7164311/latest/USD`);
+      const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
       if (!response.ok) {
         throw Error(response.statusText);
       }
-      console.log('api call',response);
       return response.json();
     } catch(error) {
       return error.message;
@@ -13,3 +12,4 @@ export default class CurrencyExchange {
   }
 }
 
+//`https://v6.exchangerate-api.com/v6/4dbcf6f936b0e474d7164311/latest/USD`
