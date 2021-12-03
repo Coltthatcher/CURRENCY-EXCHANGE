@@ -30,7 +30,7 @@ _This application is a currency exchange from US to any chosen currency listed f
 
 * _To get an API key for Currencies, first sign up for an account [here](https://www.exchangerate-api.com/). Once you are signed in, click on the API keys tab in your account. Copy the Default key that the API provides._
 * _In the terminal from the project directory run `touch .env` to create an environment file._
-* _Open .env in your prefered editor and insert `API_KEY=` followed by the API key you copied._
+* _Open .env in your preferred editor and insert `API_KEY=` followed by the API key you copied._
 
 
 

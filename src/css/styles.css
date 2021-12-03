@@ -1,3 +1,104 @@
 body {
-  background-color: rgb(149, 206, 191);
+    background-color: rgb(149, 206, 191);
+}
+
+.showRate {
+    color: chartreuse;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: cornflowerblue;
+    text-align: center;
+    
+}
+
+h1{
+    color: gold;
+}
+
+label{
+    color: crimson;
+}
+#usdInput {
+    color: #00ff95;
+    background-color: #7a00ff;
+    outline: 2px #48ff00;
+    
+}
+
+#currencies {
+    color: aqua;
+    background-color: #7a00ff
+;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgb(5, 54, 34);
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: rgb(26, 119, 26);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #0dcff1, #00ff95, #9900ff, #48ff00, #00ffd5, #002bff, #7a00ff, #00aeff, #00ffd5);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: rgb(165, 157, 46)
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(25, 9, 70);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }

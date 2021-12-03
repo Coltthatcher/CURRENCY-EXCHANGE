@@ -12,4 +12,3 @@ export default class CurrencyExchange {
   }
 }
 
-//`https://v6.exchangerate-api.com/v6/4dbcf6f936b0e474d7164311/latest/USD`
